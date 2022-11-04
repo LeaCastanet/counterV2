@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+import Counter from "./components/Counter";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import AddCounter from "./components/AddCounter";
 
 function App() {
+  const [count, setCount] = useState([0]);
+
+  const map1 = count.map((elem) => {
+    return elem - 1;
+  });
+  console.log(map1);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container">
+        <Header />
+        <div>
+          {count.map((elem) => {
+            <Counter count={count} setCount={setCount} />;
+          })}
+        </div>
+      </div>
+      <Footer />
+    </>
   );
 }
 
