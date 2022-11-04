@@ -7,6 +7,12 @@
   flex-direction: column;
 }
 
+.counters {
+  display: flex;
+  justify-content: space-around;
+  width: 100vh;
+}
+
 .counterBody {
   display: flex;
 }
@@ -30,6 +36,15 @@ button {
   border: none;
   background-color: transparent;
   border-radius: 10px;
+}
+
+.buttonAddCounter {
+  width: 250px;
+  margin-top: 20px;
+  background-color: #5c47d2;
+  color: white;
+  border: none;
+  margin: 20px;
 }
 
 .reset {

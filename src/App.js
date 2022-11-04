@@ -8,18 +8,25 @@ import AddCounter from "./components/AddCounter";
 function App() {
   const [count, setCount] = useState([0]);
 
-  const map1 = count.map((elem) => {
-    return elem - 1;
-  });
-  console.log(map1);
+  // const map1 = count.map((elem) => {
+  //   return elem - 1;
+  // });
+  // console.log(map1);
+
+  const addCounter = () => {
+    const newTab = [...count];
+    newTab.push(0);
+    setCount(newTab);
+  };
 
   return (
     <>
       <div className="container">
         <Header />
-        <div>
-          {count.map((elem) => {
-            <Counter count={count} setCount={setCount} />;
+        {count.length < 3 ? <AddCounter addCounter={addCounter} /> : null}
+        <div className="counters">
+          {count.map((elem, index) => {
+            return <Counter count={count} setCount={setCount} index={index} />;
           })}
         </div>
       </div>
