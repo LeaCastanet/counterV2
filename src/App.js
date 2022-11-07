@@ -17,9 +17,9 @@ function App() {
   // console.log(map1);
 
   const addCounter = () => {
-    const newTab = [...count];
-    newTab.push(0);
-    setCount(newTab);
+    const newCount = [...count];
+    newCount.push(0);
+    setCount(newCount);
   };
 
   return (
