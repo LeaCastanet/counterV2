@@ -4,6 +4,9 @@ import Counter from "./components/Counter";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AddCounter from "./components/AddCounter";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
+library.add(faStopwatch);
 
 function App() {
   const [count, setCount] = useState([0]);
@@ -21,8 +24,8 @@ function App() {
 
   return (
     <>
+      <Header />
       <div className="container">
-        <Header />
         {count.length < 3 ? <AddCounter addCounter={addCounter} /> : null}
         <div className="counters">
           {count.map((elem, index) => {
